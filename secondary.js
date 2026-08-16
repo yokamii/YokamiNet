@@ -3,12 +3,6 @@
 
     function startBoot() {
         bootSound.play().catch(e => console.log("Audio play blocked"));
-      setTimeout(() => {
-        bootScreen.style.opacity = '0';
-        setTimeout(() => {
-          bootScreen.style.display = 'none';
-        }, 800);
-      }, 3000); // Matches the 3s progress bar animation
     }
 
     startBoot();
