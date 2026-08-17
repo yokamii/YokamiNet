@@ -11,9 +11,10 @@ body{
 }
 
 .Background{
-    justify-content: center;
-    align-items: center;
+    align-items: safe center;       /* Prevents vertical top cutoff */
+    justify-content: safe center;
     position: relative;
+    display: flex;
     height: 100vh;
     z-index: 1;
 }
@@ -24,7 +25,7 @@ body{
     height: 100%;    
     justify-content: center;
     align-items: center;
-    position: relative;
+    position:fixed;
     z-index: 20;
     pointer-events: none;
     -moz-user-select: none;
@@ -33,17 +34,22 @@ body{
 }
 
 .MainContent{
-    padding: 20px 20px; 
-    position: absolute;
-    top: 9%;       
-    left: 9%;
-    width: 83%;
-    height: 80%;
+    padding: 70px 20px; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 0%;       
+    left: 0%;
+    width: 52vw;
     overflow: hidden; 
     font-family: Arial, sans-serif;
+    color: rgb(253, 254, 255);
     background-color: rgb(139, 154, 193);
     z-index: 3;
-    aspect-ratio: 4 / 3;
+}
+
+marquee{
+  background-color: rgb(0, 2, 4);
 }
 
   .crt::before {
@@ -145,14 +151,13 @@ body{
 
 .TVbg{
     margin-left: -20px;
-    margin-top: -20px;
+    margin-top: -70px;
     position: absolute;
     overflow: hidden; 
     object-fit: cover;    /* Scales and crops the image to fill the dimensions */
     object-position: center; /* Centers the crop area (Default) */
     height: 100%;
     width: 100%;
-    aspect-ratio: 4 / 3;
     z-index: -1;
     pointer-events: none;
     -moz-user-select: none;
